@@ -16,10 +16,17 @@
     react-datepicker "^3.1.3"
     styled-system "^5.1.5"
 
+<<<<<<< HEAD
 "@adminjs/express@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@adminjs/express/-/express-4.0.0.tgz#9a4aa6fe1281fbd5ca15df198efc0494c4a75a6d"
   integrity sha512-QShs+f8BAsV6g4w2Wg5R2SMlCOPawOTKxY9SNYfOBGNIQTgr+1rsaCyvDPaJf1xVj2OZRWQYDBEDToyxMfrZHA==
+=======
+"@admin-bro/express@3.1.0-beta.6":
+  version "3.1.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@admin-bro/express/-/express-3.1.0-beta.6.tgz#5a620c78c795a60fc582d6afe2b38396246d25c7"
+  integrity sha512-qHARF5MjwNaLGo4ueGEet2BTIBVXclMfhk+cPN1wXUD84LhzigmCHTxAPYm7LPOO5Jq1g0Fun2zssQhOFCPmGg==
+>>>>>>> 0b03996 (chore: update file structure)
 
 "@adminjs/hapi@^4.0.0":
   version "4.0.0"
@@ -29,19 +36,33 @@
     "@hapi/cookie" "^11.0.0"
     "@hapi/inert" "^6.0.1"
 
+<<<<<<< HEAD
 "@adminjs/mongoose@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@adminjs/mongoose/-/mongoose-2.0.0.tgz#aeaeaba7ecf19e4f66dae2a8f7922d4272336946"
   integrity sha512-qmgNYdmtKcbZBa69qYOQlYwCtxli7xFhgEn8y2aCry+ECngAcYGmfhcw/izfSnExR49A2AC9MFrAbW987ypcwA==
+=======
+"@admin-bro/mongoose@1.1.1-beta.1":
+  version "1.1.1-beta.1"
+  resolved "https://registry.yarnpkg.com/@admin-bro/mongoose/-/mongoose-1.1.1-beta.1.tgz#81930e50bdf2678c26cce97ec5d7555695d73c53"
+  integrity sha512-3I8CMRENmB3Knj8Ulq5h/8L72xk7dizqiWyZpVfAItH/CJDUMoz4wsqsszU9f/GH+PpWnzEGrrZ19eB23W8+kw==
+>>>>>>> 0b03996 (chore: update file structure)
   dependencies:
     escape-regexp "0.0.1"
     flat "^4.1.0"
     lodash "^4.17.11"
 
+<<<<<<< HEAD
 "@adminjs/sequelize@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@adminjs/sequelize/-/sequelize-2.0.0.tgz#d9f66d7685d079017eb3adae24e0c5b668cc2af3"
   integrity sha512-48bhTcalyWnL8tAoonPUltt3mG5bDu2osJsh3vcmhKzeLLD4f5NBKVjuKBqNpYIJWt+0m+Rz8mvszdjcwRvULw==
+=======
+"@admin-bro/sequelize@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@admin-bro/sequelize/-/sequelize-1.1.2.tgz#503ce1a3e340e9df54d953f846f1e05d434c02a6"
+  integrity sha512-qjyPItD5Fc0YXiDv+ES7Bb4U3wND9omzMCDScoFCwVBvDMsaM/jPhe24XbfedoBGRP1OXmJC0rtuxsxYjRAnUw==
+>>>>>>> 0b03996 (chore: update file structure)
   dependencies:
     escape-regexp "0.0.1"
     flat "^5.0.0"
@@ -1660,12 +1681,21 @@ accepts@~1.3.7:
     mime-types "~2.1.24"
     negotiator "0.6.2"
 
+<<<<<<< HEAD
 adminjs@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/adminjs/-/adminjs-5.0.0.tgz#335021b4cef136efaa8d75e41db43c806a8eee35"
   integrity sha512-kedIkWX+83XaU9sQAM5TcYUxPNrat1J8cafC4O9gJhz1//bFz53hWCUsLtRhZuDDVvoKXGZ18h7tlbcG5MQJGg==
   dependencies:
     "@adminjs/design-system" "^2.0.0"
+=======
+admin-bro@3.3.2-beta.2:
+  version "3.3.2-beta.2"
+  resolved "https://registry.yarnpkg.com/admin-bro/-/admin-bro-3.3.2-beta.2.tgz#2caa575cc23269eb3171f4a918cdc866e4aaf409"
+  integrity sha512-MSPz0SiV8DDRkjZ/DnZC4n2TYJ9+gp47Bc8G+vDVfUmrN9ltTUw+zv5GW4JwRUpY9y694KO7jeEAXPVDliMuYg==
+  dependencies:
+    "@admin-bro/design-system" "^1.7.0-beta.24"
+>>>>>>> 0b03996 (chore: update file structure)
     "@babel/core" "^7.10.2"
     "@babel/parser" "^7.10.2"
     "@babel/plugin-transform-runtime" "^7.10.1"
