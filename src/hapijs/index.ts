@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
-import Hapi from '@admin-bro/hapi';
+import Hapi from '@adminjs/hapi';
 import mongoose from 'mongoose';
 
-import AdminBroOptions from '../admin';
+import AdminJSOptions from '../admin';
 
 const ADMIN = {
   password: 'password',
@@ -20,7 +20,7 @@ const start = async () => {
     await server.register({
       plugin: Hapi,
       options: {
-        ...AdminBroOptions,
+        ...AdminJSOptions,
         auth: {
           authenticate: async (email: string, password: string) => {
             if (ADMIN.password === password && email === ADMIN.email) {
@@ -32,7 +32,7 @@ const start = async () => {
             return null;
           },
           strategy: 'session',
-          cookieName: 'admin-bro-cookie',
+          cookieName: 'adminjs-cookie',
           cookiePassword:
             process.env.COOKIE_PASSWORD ||
             'makesurepasswordissecuremakesurepasswordissecure',

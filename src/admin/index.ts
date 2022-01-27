@@ -1,10 +1,10 @@
-import AdminBro, {
+import AdminJS, {
   ActionRequest,
   ActionResponse,
   ActionContext,
-} from 'admin-bro';
-import AdminBroMongoose from '@admin-bro/mongoose';
-import AdminBroSequelizejs from '@admin-bro/sequelize';
+} from 'adminjs';
+import AdminJSMongoose from '@adminjs/mongoose';
+import AdminJSSequelizejs from '@adminjs/sequelize';
 
 import mongooseModels from '../adapters/mongoose/models';
 import sequelizeDb from '../adapters/sequelize/models';
@@ -19,8 +19,8 @@ import category from './resources/category';
 import test from './resources/test';
 import { sort, timestamps } from './resources/sort';
 
-AdminBro.registerAdapter(AdminBroMongoose);
-AdminBro.registerAdapter(AdminBroSequelizejs);
+AdminJS.registerAdapter(AdminJSMongoose);
+AdminJS.registerAdapter(AdminJSSequelizejs);
 
 const menu = {
   mongoose: { name: 'mongooseResources', icon: 'SpineLabel' },
@@ -80,7 +80,7 @@ export default {
     app: '1.2.3-beta',
   },
   branding: {
-    companyName: 'AdminBro demo page',
+    companyName: 'AdminJS demo page',
   },
   pages: {
     customPage: {
@@ -92,7 +92,7 @@ export default {
       ) => ({
         text: 'I am fetched from the backend',
       }),
-      component: AdminBro.bundle('./components/some-stats'),
+      component: AdminJS.bundle('./components/some-stats'),
     },
   },
   locale: {
@@ -100,7 +100,7 @@ export default {
     translations: {
       messages: {
         loginWelcome:
-          'to the demo application made with AdminBro - the best admin framework for Node.js apps, based on React.',
+          'to the demo application made with AdminJS - the best admin framework for Node.js apps, based on React.',
       },
     },
   },

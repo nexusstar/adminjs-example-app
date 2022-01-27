@@ -84,8 +84,8 @@ const run = async () => {
         );
       }),
     );
-    const users = [];
-    const sqlUsers = [];
+    const users: Array<typeof User> = [];
+    const sqlUsers: Array<typeof User> = [];
     await Promise.all(
       emails.map(async (email) => {
         const user = await User.create({
@@ -122,7 +122,7 @@ const run = async () => {
           title,
           content,
           published: faker.random.boolean(),
-          author: users[Math.floor(Math.random() * users.length)]._id,
+          author: users[Math.floor(Math.random() * users.length)],
         });
       }),
     );
@@ -146,7 +146,7 @@ const run = async () => {
         sequelizeDb.sequelize.models.FavouritePlace.create({
           name: place,
           description: faker.lorem.words(2),
-          userId: sqlUsers[Math.floor(Math.random() * sqlUsers.length)].id,
+          userId: sqlUsers[Math.floor(Math.random() * sqlUsers.length)],
         }),
       ),
     );

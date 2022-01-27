@@ -1,22 +1,22 @@
 /* eslint-disable no-console */
 import mongoose from 'mongoose';
 import express from 'express';
-import AdminBro from 'admin-bro';
-import Express from '@admin-bro/express';
+import AdminJS from 'adminjs';
+import Express from '@adminjs/express';
 
-import AdminBroOptions from '../admin';
+import AdminJSOptions from '../admin';
 
 const app = express();
 
-const adminBro = new AdminBro(AdminBroOptions);
+const adminJS = new AdminJS(AdminJSOptions);
 
 const ADMIN = {
   email: 'admin@example.com',
   password: 'password',
 };
 
-// const router = AdminBroExpress.buildRouter(adminBro)
-const router = Express.buildAuthenticatedRouter(adminBro, {
+// const router = AdminJSExpress.buildRouter(adminJS) when no authenticated routes
+const router = Express.buildAuthenticatedRouter(adminJS, {
   authenticate: async (email: string, password: string) => {
     if (ADMIN.password === password && ADMIN.email === email) {
       return ADMIN;
@@ -27,13 +27,13 @@ const router = Express.buildAuthenticatedRouter(adminBro, {
   cookiePassword: 'somepassword',
 });
 
-app.use(adminBro.options.rootPath, router);
+app.use(adminJS.options.rootPath, router);
 
 const run = async () => {
   await mongoose.connect(process.env.MONGO_URL);
 
   app.listen(8080, () =>
-    console.log('AdminBro is available under localhost:8080/admin'),
+    console.log('AdminJS is available under localhost:8080/admin'),
   );
 };
 

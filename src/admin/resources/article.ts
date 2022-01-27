@@ -1,5 +1,4 @@
-const AdminJS = require('adminjs')
-const { sort, timestamps } = require('./sort')
+import AdminJS from 'adminjs';
 
 import { sort, timestamps } from './sort';
 
@@ -21,13 +20,8 @@ export default {
     published: {
       label: 'Published (custom render)',
       components: {
-<<<<<<< HEAD:admin/resources/article.js
-        list: AdminJS.bundle('../components/article-in-list')
-      }
-=======
-        list: AdminBro.bundle('../components/article-in-list'),
+        list: AdminJS.bundle('../components/article-in-list'),
       },
->>>>>>> 7a993bf (feat: rewrite project to typescript):src/admin/resources/article.ts
     },
   },
 };

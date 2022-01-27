@@ -1,6 +1,6 @@
 import React from 'react';
-import { H5, Text, DrawerContent } from '@admin-bro/design-system';
-import { ActionHeader, ActionProps } from 'admin-bro';
+import { H5, Text, DrawerContent } from '@adminjs/design-system';
+import { ActionHeader, ActionProps } from 'adminjs';
 
 const DetailedStats: React.FC<ActionProps> = (props) => (
   <DrawerContent>

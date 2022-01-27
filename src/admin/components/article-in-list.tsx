@@ -1,5 +1,5 @@
 import React from 'react';
-import { BasePropertyComponentProps } from 'admin-bro';
+import { BasePropertyComponentProps } from 'adminjs';
 
 const ArticleInList: React.FC<BasePropertyComponentProps> = (props) => {
   const { record, property } = props;

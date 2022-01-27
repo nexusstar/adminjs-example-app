@@ -1,4 +1,4 @@
-import { BaseResource, BaseProperty, BaseRecord } from 'admin-bro';
+import { BaseResource, BaseProperty, BaseRecord } from 'adminjs';
 import axios from 'axios';
 
 class PostCode extends BaseResource {

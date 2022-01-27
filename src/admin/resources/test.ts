@@ -1,4 +1,4 @@
-import { ActionRequest } from 'admin-bro';
+import { ActionRequest } from 'adminjs';
 
 const nullifyEmptyProperties = (request: ActionRequest) => {
   const { method, payload } = request;

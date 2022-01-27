@@ -1,7 +1,7 @@
 {
-  "name": "admin-bro-example-app",
+  "name": "example",
   "version": "1.0.0",
-  "description": "",
+  "description": "AdinJS example app",
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",

@@ -1,9 +1,9 @@
-import AdminBro, {
+import AdminJS, {
   ValidationError,
   ActionRequest,
   ActionResponse,
   ActionContext,
-} from 'admin-bro';
+} from 'adminjs';
 
 import { sort, timestamps } from './sort';
 
@@ -21,7 +21,7 @@ export default {
       actionType: 'resource',
       icon: 'Apps',
       label: 'Resource statistics',
-      component: AdminBro.bundle('../components/detailed-stats'),
+      component: AdminJS.bundle('../components/detailed-stats'),
       handler: async () => ({
         true: 'ueas',
       }),
@@ -44,7 +44,7 @@ export default {
       label: "don't touch this!!!",
       icon: 'Exit',
       guard: 'You can setup guards before an action - just in case.',
-      component: AdminBro.bundle('../components/dont-touch-this-action'),
+      component: AdminJS.bundle('../components/dont-touch-this-action'),
       handler: async (
         _request: ActionRequest,
         _response: ActionResponse,

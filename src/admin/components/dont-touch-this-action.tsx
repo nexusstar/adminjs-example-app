@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, H3 } from '@admin-bro/design-system';
-import { ActionProps } from 'admin-bro';
+import { Box, H3 } from '@adminjs/design-system';
+import { ActionProps } from 'adminjs';
 
 const DontTouchThis: React.FC<ActionProps> = (props) => {
   const { record } = props;
