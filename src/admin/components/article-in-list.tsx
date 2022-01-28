@@ -3,7 +3,7 @@ import { BasePropertyComponentProps } from 'adminjs';
 
 const ArticleInList: React.FC<BasePropertyComponentProps> = (props) => {
   const { record, property } = props;
-  const value = record.params[property.name];
+  const value = record?.params[property.name];
 
   return (
     <span>

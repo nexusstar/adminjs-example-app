@@ -50,7 +50,7 @@ export default {
         _response: ActionResponse,
         data: ActionContext,
       ) => ({
-        record: data.record.toJSON(),
+        record: data.record?.toJSON(),
       }),
     },
   },

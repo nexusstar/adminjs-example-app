@@ -30,7 +30,9 @@ const router = Express.buildAuthenticatedRouter(adminJS, {
 app.use(adminJS.options.rootPath, router);
 
 const run = async () => {
-  await mongoose.connect(process.env.MONGO_URL);
+  if(process.env?.MONGO_URL !== undefined){
+    await mongoose.connect(process.env.MONGO_URL);
+  }
 
   app.listen(8080, () =>
     console.log('AdminJS is available under localhost:8080/admin'),

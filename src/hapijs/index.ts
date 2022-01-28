@@ -14,8 +14,10 @@ const start = async () => {
     const server = Hapi.server({
       port: process.env.PORT || 8080,
     });
-
-    await mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
+    
+    if (process.env?.MONGO_URL !== undefined){
+      await mongoose.connect(process.env.MONGO_URL);
+    }
 
     await server.register({
       plugin: Hapi,

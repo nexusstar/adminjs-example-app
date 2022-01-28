@@ -2,7 +2,7 @@ import { BaseResource, BaseProperty, BaseRecord } from 'adminjs';
 import axios from 'axios';
 
 class PostCode extends BaseResource {
-  private _properties: BaseProperty[];
+  private _properties: Array<BaseProperty>;
   private totalCount: number;
 
   constructor(params) {
@@ -42,8 +42,8 @@ class PostCode extends BaseResource {
     return this._properties;
   }
 
-  public property(path) {
-    return this._properties.find((p) => p.path === path);
+  public property(path: string): BaseProperty| null {
+    return this._properties.find((p) => p.path() === path) || null;
   }
 
   public async count() {

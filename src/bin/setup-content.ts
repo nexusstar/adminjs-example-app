@@ -44,7 +44,9 @@ const places = Object.keys(
 );
 
 const run = async () => {
-  await mongoose.connect(process.env.MONGO_URL);
+  if(process.env?.MONGO_URL !== undefined) {
+    await mongoose.connect(process.env.MONGO_URL);
+  }
   try {
     await Category.deleteMany({});
     await Comment.deleteMany({});

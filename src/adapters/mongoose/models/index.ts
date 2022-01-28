@@ -7,3 +7,25 @@ export { default as Complicated } from './complicated-model';
 export { default as Page } from './page-model';
 export { default as Thing } from './thing-model';
 export { default as User } from './user-model';
+
+import Admin  from './admin-model';
+import Article  from './article-model';
+import BlogPost  from './blog-post-model';
+import Category  from './category-model';
+import Comment  from './comment-model';
+import Complicated  from './complicated-model';
+import Page  from './page-model';
+import Thing  from './thing-model';
+import User  from './user-model';
+
+export default{
+    Admin,
+    Article,
+    BlogPost,
+    Category,
+    Comment,
+    Complicated,
+    Page,
+    Thing,
+    User
+};
