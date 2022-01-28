@@ -7,7 +7,6 @@ import Express from '@adminjs/express';
 import AdminJSOptions from '../admin';
 
 const app = express();
-
 const adminJS = new AdminJS(AdminJSOptions);
 
 const ADMIN = {
@@ -23,16 +22,17 @@ const router = Express.buildAuthenticatedRouter(adminJS, {
     }
     return null;
   },
-  cookieName: 'adminbro',
+  cookieName: 'adminjs',
   cookiePassword: 'somepassword',
 });
-
-app.use(adminJS.options.rootPath, router);
+console.log('adminjs', adminJS);
 
 const run = async () => {
   if(process.env?.MONGO_URL !== undefined){
     await mongoose.connect(process.env.MONGO_URL);
   }
+
+  app.use(adminJS.options.rootPath, router);
 
   app.listen(8080, () =>
     console.log('AdminJS is available under localhost:8080/admin'),

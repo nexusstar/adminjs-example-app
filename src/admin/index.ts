@@ -8,7 +8,7 @@ import AdminJSMongoose from '@adminjs/mongoose';
 import AdminJSSequelizejs from '@adminjs/sequelize';
 
 import mongooseModels from '../adapters/mongoose/models';
-import sequelizeDb from '../adapters/sequelize/models';
+import sequelizeDb from '../adapters/sequelize/init';
 
 import user from './resources/user';
 import page from './resources/page';

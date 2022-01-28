@@ -1,17 +1,13 @@
-const FavouritePlaceModel = (sequelize, DataTypes) => {
-  const FavouritePlace = sequelize.define(
-    'FavouritePlace',
-    {
-      name: DataTypes.STRING,
-      description: DataTypes.TEXT,
-      publishedAt: DataTypes.DATE,
-    },
-    {},
-  );
-  FavouritePlace.associate = function (models) {
-    FavouritePlace.belongsTo(models.User, { foreignKey: 'userId' });
-  };
-  return FavouritePlace;
-};
+import { DataTypes } from 'sequelize';
+import sequelize from '../config';
 
-export default FavouritePlaceModel;
+const FavouritePlace = sequelize.define(
+  'FavouritePlace',
+  {
+    name: DataTypes.STRING,
+    description: DataTypes.TEXT,
+    publishedAt: DataTypes.DATE,
+  },
+);
+
+export default FavouritePlace;

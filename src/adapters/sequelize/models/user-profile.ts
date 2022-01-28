@@ -1,5 +1,7 @@
-const UserProfileModel = (sequelize, DataTypes) => {
-  const UserProfile = sequelize.define(
+import { DataTypes } from 'sequelize';
+import sequelize from '../config';
+
+const UserProfile = sequelize.define(
     'UserProfile',
     {
       user_id: {
@@ -11,7 +13,5 @@ const UserProfileModel = (sequelize, DataTypes) => {
     },
     {},
   );
-  return UserProfile;
-};
 
-export default UserProfileModel;
+export default UserProfile;
