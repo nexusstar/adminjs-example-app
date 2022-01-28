@@ -34,7 +34,6 @@
     "express-brute": "^1.0.1",
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.0",
-    "faker": "^6.6.6",
     "mongoose": "^6.1.8",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.15",
@@ -46,8 +45,8 @@
     "typeorm": "^0.2.29"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.5",
     "@types/express": "^4.17.9",
-    "@types/faker": "^6.6.9",
     "@types/flat": "^5.0.1",
     "@types/node": "^17.0.12",
     "@typescript-eslint/eslint-plugin": "^5.10.1",

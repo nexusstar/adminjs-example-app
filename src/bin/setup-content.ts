@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import faker from 'faker';
+import faker from '@faker-js/faker';
 import mongoose from 'mongoose';
 
 import sequelizeDb from '../adapters/sequelize/models';
