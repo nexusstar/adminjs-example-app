@@ -8,7 +8,7 @@ import AdminJSMongoose from '@adminjs/mongoose';
 import AdminJSSequelizejs from '@adminjs/sequelize';
 
 import mongooseModels from '../adapters/mongoose/models';
-import sequelizeDb from '../adapters/sequelize/init';
+import sequelizeModels from '../adapters/sequelize/models';
 
 import user from './resources/user';
 import page from './resources/page';
@@ -60,19 +60,19 @@ export default {
     },
     { resource: mongooseModels.Thing, options: { parent: menu.mongoose } },
     {
-      resource: sequelizeDb.sequelize.models.User,
+      resource: sequelizeModels.User,
       options: { parent: menu.sequelize, sort, properties: timestamps },
     },
     {
-      resource: sequelizeDb.sequelize.models.FavouritePlace,
+      resource: sequelizeModels.FavouritePlace,
       options: { navigation: menu.sequelize, sort, properties: timestamps },
     },
     {
-      resource: sequelizeDb.sequelize.models.UserProfile,
+      resource: sequelizeModels.UserProfile,
       options: { parent: menu.sequelize },
     },
     {
-      resource: sequelizeDb.sequelize.models.Test,
+      resource: sequelizeModels.Test,
       options: { parent: menu.sequelize, ...test },
     },
   ],

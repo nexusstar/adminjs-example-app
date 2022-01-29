@@ -5,6 +5,7 @@ import AdminJS from 'adminjs';
 import Express from '@adminjs/express';
 
 import AdminJSOptions from '../admin';
+import initSequelize from '../adapters/sequelize/init';
 
 const app = express();
 const adminJS = new AdminJS(AdminJSOptions);
@@ -24,10 +25,15 @@ const router = Express.buildAuthenticatedRouter(adminJS, {
   },
   cookieName: 'adminjs',
   cookiePassword: 'somepassword',
-});
-console.log('adminjs', adminJS);
+}, null, {
+    resave: false,
+    saveUninitialized: true,
+  });
 
 const run = async () => {
+
+  initSequelize();
+
   if(process.env?.MONGO_URL !== undefined){
     await mongoose.connect(process.env.MONGO_URL);
   }

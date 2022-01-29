@@ -3,6 +3,7 @@ import faker from '@faker-js/faker';
 import mongoose from 'mongoose';
 
 import sequelizeDb from '../adapters/sequelize/models';
+import { User as UserModel } from '../adapters/sequelize/models';
 import {
   Category,
   Comment,
@@ -53,10 +54,10 @@ const run = async () => {
     await User.deleteMany({});
     await Page.deleteMany({});
     await Article.deleteMany({});
-    await sequelizeDb.sequelize.models.User.destroy({
+    await sequelizeDb.User.destroy({
       where: {},
     });
-    await sequelizeDb.sequelize.models.FavouritePlace.destroy({
+    await sequelizeDb.FavouritePlace.destroy({
       where: {},
     });
 
@@ -87,21 +88,21 @@ const run = async () => {
       }),
     );
     const users: Array<typeof User> = [];
-    const sqlUsers: Array<typeof User> = [];
+    const sqlUsers: Array<typeof UserModel> = [];
     await Promise.all(
       emails.map(async (email) => {
         const user = await User.create({
           email,
           'auth.password': faker.random.uuid(),
         });
-        const userSql = await sequelizeDb.sequelize.models.User.create({
+        const userSql  = await sequelizeDb.User.create({
           firstName: faker.name.firstName(),
           lastName: faker.name.lastName(),
           gender: faker.random.boolean() ? 'male' : 'female',
           email,
         });
         users.push(user);
-        sqlUsers.push(userSql);
+        sqlUsers.push(userSql as unknown as typeof UserModel);
       }),
     );
 
@@ -145,7 +146,7 @@ const run = async () => {
 
     await Promise.all(
       places.map(async (place) =>
-        sequelizeDb.sequelize.models.FavouritePlace.create({
+        sequelizeDb.FavouritePlace.create({
           name: place,
           description: faker.lorem.words(2),
           userId: sqlUsers[Math.floor(Math.random() * sqlUsers.length)],

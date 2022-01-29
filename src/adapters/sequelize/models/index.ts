@@ -1,11 +1,19 @@
-import FavoritePlace from './favouriteplace';
+import FavouritePlace from './favouriteplace';
 import UserProfile from './user-profile';
 import User from './user';
 import Test from './test';
 
 export {
-  FavoritePlace,
+  FavouritePlace,
   UserProfile,
   User,
   Test,
 };
+
+export default {
+  FavouritePlace,
+  UserProfile,
+  User,
+  Test,
+};
+
