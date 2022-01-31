@@ -1,5 +1,7 @@
 import { DataTypes, Model, Optional, UUIDV4 } from 'sequelize';
+
 import sequelize from '../config';
+
 import User, { UserInstance } from './user';
 
 interface FavAttributes {

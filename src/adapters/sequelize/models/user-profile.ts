@@ -1,4 +1,5 @@
 import { DataTypes, Model, Optional, UUIDV4 } from 'sequelize';
+
 import sequelize from '../config';
 
 interface UserProfileAttributes {
@@ -13,7 +14,7 @@ interface UserProfileInstance
   extends Model<UserProfileAttributes, UserProfileCreationAttributes>,
     UserProfileAttributes {}
 
-const UserProfile = sequelize.define(
+const UserProfile = sequelize.define<UserProfileInstance>(
   'UserProfile',
   {
     user_id: {

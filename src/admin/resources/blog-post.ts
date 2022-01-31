@@ -1,5 +1,4 @@
-const AdminJS = require('adminjs');
-const { sort, timestamps } = require('./sort');
+import { sort, timestamps } from './sort';
 
 export default {
   name: 'BlogPost (read only)',

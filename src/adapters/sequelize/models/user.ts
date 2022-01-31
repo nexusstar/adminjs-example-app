@@ -1,6 +1,6 @@
 import { DataTypes, Model, Optional, UUIDV4 } from 'sequelize';
+
 import sequelize from '../config';
-import FavouritePlace from './favouriteplace';
 
 export enum Gender {
   MALE = 'male',

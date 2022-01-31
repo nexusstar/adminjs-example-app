@@ -44,9 +44,9 @@ const sequelizeConnection = new Sequelize(
 // Testing the connection
 try {
   sequelizeConnection.authenticate();
-  console.log('Connection has been established successfully.');
+  console.log('Connection has been established successfully.'); // eslint-disable-line no-console
 } catch (error) {
-  console.error('Unable to connect to the database:', error);
+  console.error('Unable to connect to the database:', error); // eslint-disable-line no-console
 }
 
 export default sequelizeConnection;

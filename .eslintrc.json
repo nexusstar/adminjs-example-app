@@ -17,12 +17,17 @@
   "extends": [
     "airbnb-typescript",
     "eslint:recommended",
+    "plugin:import/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react"
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
   ],
+  "settings":{
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     "semi": ["error", "always"],
     "comma-dangle": ["error", "always-multiline"],

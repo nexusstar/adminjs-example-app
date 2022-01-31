@@ -1,10 +1,13 @@
 import { DataTypes, Model, Optional, UUIDV4 } from 'sequelize';
+
 import sequelize from '../config';
+
 interface TestAttributes {
   id: string;
   name: string;
   text: string;
 }
+
 interface TestCreationalAttributes extends Optional<TestAttributes, 'id'> {}
 interface TestInstance
   extends Model<TestCreationalAttributes, TestAttributes>,

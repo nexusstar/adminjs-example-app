@@ -1,13 +1,10 @@
-/* eslint-disable no-console */
-import faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import mongoose from 'mongoose';
 
 import {
   FavouritePlace,
-  Test,
-  UserProfile,
+  User as UserModel,
 } from '../adapters/sequelize/models';
-import { User as UserModel } from '../adapters/sequelize/models';
 import { Gender } from '../adapters/sequelize/models/user';
 import {
   Category,
@@ -159,15 +156,15 @@ const run = async () => {
       ),
     );
   } catch (error) {
-    console.log(error);
+    console.log(error); // eslint-disable-line no-console
   }
   await mongoose.connection.close();
 };
 
 run()
   .then(() => {
-    console.log('end');
+    console.log('end'); // eslint-disable-line no-console
   })
   .catch((e) => {
-    console.log(e);
+    console.log(e); // eslint-disable-line no-console
   });
