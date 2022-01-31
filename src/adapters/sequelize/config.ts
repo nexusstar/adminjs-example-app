@@ -11,8 +11,8 @@ const config = {
   },
   // Psql
   development: {
-    username: process.env.POSTGRES_USER || '',
-    password: process.env.POSTGRES_PASSWORD || '',
+    username: process.env.POSTGRES_USER as string,
+    password: process.env.POSTGRES_PASSWORD  as string,
     port: process.env.POSTGRES_PORT || 5432,
     database: process.env.POSTGRES_DATABASE || 'adminjs_example',
     host: process.env.POSTGRES_HOST || 'localhost',
@@ -35,6 +35,14 @@ const sequelizeConnection = new Sequelize(dbConfig.database, dbConfig.username, 
   host: dbConfig.host,
   dialect: dbConfig.dialect,
 })
+
+// Testing the connection
+try {
+  sequelizeConnection.authenticate();
+  console.log('Connection has been established successfully.');
+} catch (error) {
+  console.error('Unable to connect to the database:', error);
+}
 
 export default sequelizeConnection
 

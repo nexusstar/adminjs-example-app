@@ -10,10 +10,3 @@ export {
   Test,
 };
 
-export default {
-  FavouritePlace,
-  UserProfile,
-  User,
-  Test,
-};
-

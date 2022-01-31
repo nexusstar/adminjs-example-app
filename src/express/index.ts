@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import express from 'express';
 import AdminJS from 'adminjs';
 import Express from '@adminjs/express';
+import 'dotenv/config'
 
 import AdminJSOptions from '../admin';
 import initSequelize from '../adapters/sequelize/init';
