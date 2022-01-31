@@ -7,7 +7,7 @@
     "build": "tsc -p tsconfig.build.json",
     "build-watch": "tsc -p tsconfig.build.json -w",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
-    "style": "prettier --check \"{src}/**/*.{{ts,js}?(x),json}\"",
+    "style": "prettier --check \"./src/**/*.{{ts,js}?(x),json}\"",
     "sequelize": "./node_modules/.bin/sequelize",
     "dev": "ADMINJS_DEV_ENV=true nodemon --ext '.ts,.js' --watch ../adminjs/src --watch ./ --ignore '*.spec.js' index.js",
     "dev:watch": "nodemon --ext '.js' --watch ../adminjs/lib --watch ./ --ignore '*.spec.js' index.js",

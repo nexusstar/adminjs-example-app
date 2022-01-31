@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { Box, H3, Placeholder, Button} from '@adminjs/design-system'
-import { ApiClient, useNotice} from 'adminjs'
+import React, { useEffect, useState } from 'react';
+import { Box, H3, Placeholder, Button } from '@adminjs/design-system';
+import { ApiClient, useNotice } from 'adminjs';
 
 const api = new ApiClient();
 

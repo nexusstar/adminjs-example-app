@@ -42,7 +42,7 @@ class PostCode extends BaseResource {
     return this._properties;
   }
 
-  public property(path: string): BaseProperty| null {
+  public property(path: string): BaseProperty | null {
     return this._properties.find((p) => p.path() === path) || null;
   }
 

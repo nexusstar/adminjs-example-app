@@ -14,8 +14,8 @@ const start = async () => {
     const server = Hapi.server({
       port: process.env.PORT || 8080,
     });
-    
-    if (process.env?.MONGO_URL !== undefined){
+
+    if (process.env?.MONGO_URL !== undefined) {
       await mongoose.connect(process.env.MONGO_URL);
     }
 

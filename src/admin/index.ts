@@ -2,7 +2,7 @@ import AdminJS, {
   ActionRequest,
   ActionResponse,
   ActionContext,
-  AdminJSOptions
+  AdminJSOptions,
 } from 'adminjs';
 import AdminJSMongoose from '@adminjs/mongoose';
 import AdminJSSequelizejs from '@adminjs/sequelize';

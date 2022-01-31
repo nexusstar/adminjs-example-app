@@ -2,7 +2,11 @@
 import faker from '@faker-js/faker';
 import mongoose from 'mongoose';
 
-import { FavouritePlace, Test, UserProfile}  from '../adapters/sequelize/models';
+import {
+  FavouritePlace,
+  Test,
+  UserProfile,
+} from '../adapters/sequelize/models';
 import { User as UserModel } from '../adapters/sequelize/models';
 import { Gender } from '../adapters/sequelize/models/user';
 import {
@@ -11,7 +15,7 @@ import {
   User,
   Page,
   Article,
-} from '../adapters/mongoose/models'
+} from '../adapters/mongoose/models';
 
 const categories = Object.keys(
   [...Array(100).keys()].reduce(
@@ -46,7 +50,7 @@ const places = Object.keys(
 );
 
 const run = async () => {
-  if(process.env?.MONGO_URL !== undefined) {
+  if (process.env?.MONGO_URL !== undefined) {
     await mongoose.connect(process.env.MONGO_URL);
   }
   try {
@@ -96,7 +100,7 @@ const run = async () => {
           email,
           'auth.password': faker.random.uuid(),
         });
-        const userSql  = await UserModel.create({
+        const userSql = await UserModel.create({
           firstName: faker.name.firstName(),
           lastName: faker.name.lastName(),
           gender: faker.random.boolean() ? Gender.MALE : Gender.FEMALE,

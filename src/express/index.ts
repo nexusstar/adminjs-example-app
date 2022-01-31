@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import express from 'express';
 import AdminJS from 'adminjs';
 import Express from '@adminjs/express';
-import 'dotenv/config'
+import 'dotenv/config';
 
 import AdminJSOptions from '../admin';
 import initSequelize from '../adapters/sequelize/init';
@@ -17,25 +17,29 @@ const ADMIN = {
 };
 
 // const router = AdminJSExpress.buildRouter(adminJS) when no authenticated routes
-const router = Express.buildAuthenticatedRouter(adminJS, {
-  authenticate: async (email: string, password: string) => {
-    if (ADMIN.password === password && ADMIN.email === email) {
-      return ADMIN;
-    }
-    return null;
+const router = Express.buildAuthenticatedRouter(
+  adminJS,
+  {
+    authenticate: async (email: string, password: string) => {
+      if (ADMIN.password === password && ADMIN.email === email) {
+        return ADMIN;
+      }
+      return null;
+    },
+    cookieName: 'adminjs',
+    cookiePassword: 'somepassword',
   },
-  cookieName: 'adminjs',
-  cookiePassword: 'somepassword',
-}, null, {
+  null,
+  {
     resave: false,
     saveUninitialized: true,
-  });
+  },
+);
 
 const run = async () => {
-
   initSequelize();
 
-  if(process.env?.MONGO_URL !== undefined){
+  if (process.env?.MONGO_URL !== undefined) {
     await mongoose.connect(process.env.MONGO_URL);
   }
 

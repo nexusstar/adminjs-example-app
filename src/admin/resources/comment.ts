@@ -1,5 +1,5 @@
-const AdminJS = require('adminjs')
-const { sort, timestamps } = require('./sort')
+const AdminJS = require('adminjs');
+const { sort, timestamps } = require('./sort');
 
 export default {
   sort,

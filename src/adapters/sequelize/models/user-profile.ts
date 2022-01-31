@@ -6,9 +6,12 @@ interface UserProfileAttributes {
   name: string;
 }
 
-interface UserProfileCreationAttributes extends Optional<UserProfileAttributes, 'user_id'> {}
+interface UserProfileCreationAttributes
+  extends Optional<UserProfileAttributes, 'user_id'> {}
 
-interface UserProfileInstance extends Model<UserProfileAttributes, UserProfileCreationAttributes>, UserProfileAttributes {}
+interface UserProfileInstance
+  extends Model<UserProfileAttributes, UserProfileCreationAttributes>,
+    UserProfileAttributes {}
 
 const UserProfile = sequelize.define(
   'UserProfile',
@@ -17,11 +20,11 @@ const UserProfile = sequelize.define(
       type: DataTypes.UUID,
       allowNull: false,
       primaryKey: true,
-      defaultValue: UUIDV4
+      defaultValue: UUIDV4,
     },
-    name:{
+    name: {
       type: DataTypes.STRING,
-    } 
+    },
   },
   {},
 );

@@ -1,4 +1,4 @@
-import {Sequelize} from 'sequelize';
+import { Sequelize } from 'sequelize';
 
 const config = {
   test: {
@@ -12,7 +12,7 @@ const config = {
   // Psql
   development: {
     username: process.env.POSTGRES_USER as string,
-    password: process.env.POSTGRES_PASSWORD  as string,
+    password: process.env.POSTGRES_PASSWORD as string,
     port: process.env.POSTGRES_PORT || 5432,
     database: process.env.POSTGRES_DATABASE || 'adminjs_example',
     host: process.env.POSTGRES_HOST || 'localhost',
@@ -31,10 +31,15 @@ const config = {
 const env = process.env.NODE_ENV || 'development';
 const dbConfig = config[env];
 
-const sequelizeConnection = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
-  host: dbConfig.host,
-  dialect: dbConfig.dialect,
-})
+const sequelizeConnection = new Sequelize(
+  dbConfig.database,
+  dbConfig.username,
+  dbConfig.password,
+  {
+    host: dbConfig.host,
+    dialect: dbConfig.dialect,
+  },
+);
 
 // Testing the connection
 try {
@@ -44,5 +49,4 @@ try {
   console.error('Unable to connect to the database:', error);
 }
 
-export default sequelizeConnection
-
+export default sequelizeConnection;
