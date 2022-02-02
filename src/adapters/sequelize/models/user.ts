@@ -1,6 +1,8 @@
 import { DataTypes, Model, Optional, UUIDV4 } from 'sequelize';
 
-import sequelize from '../config';
+import { sequelize } from '../config';
+
+import FavouritePlaces from './favouriteplace';
 
 export enum Gender {
   MALE = 'male',
@@ -34,12 +36,23 @@ const User = sequelize.define<UserInstance>('User', {
     validate: { len: [3, 20] },
   },
   lastName: DataTypes.STRING,
-  gender: DataTypes.ENUM('male', 'female'),
+  gender: DataTypes.STRING,
   isMyFavourite: DataTypes.BOOLEAN,
   email: {
     type: DataTypes.STRING,
     validate: { isEmail: true },
   },
+});
+
+User.hasMany(FavouritePlaces, {
+  sourceKey: 'id',
+  foreignKey: 'userId',
+  as: 'favouriteplaces',
+});
+
+FavouritePlaces.belongsTo(User, {
+  foreignKey: 'userId',
+  as: 'user',
 });
 
 export default User;

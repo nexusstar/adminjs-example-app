@@ -40,7 +40,13 @@ const run = async () => {
   initSequelize();
 
   if (process.env?.MONGO_URL !== undefined) {
-    await mongoose.connect(process.env.MONGO_URL);
+    try {
+      await mongoose.connect(process.env.MONGO_URL, {
+        dbName: 'adminjs-example-app',
+      });
+    } catch (error) {
+      console.log('Error connecting to MongoDB', error); // eslint-disable-line no-console
+    }
   }
 
   app.use(adminJS.options.rootPath, router);

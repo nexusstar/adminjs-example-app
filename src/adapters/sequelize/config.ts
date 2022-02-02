@@ -31,7 +31,7 @@ const config = {
 const env = process.env.NODE_ENV || 'development';
 const dbConfig = config[env];
 
-const sequelizeConnection = new Sequelize(
+const sequelize = new Sequelize(
   dbConfig.database,
   dbConfig.username,
   dbConfig.password,
@@ -43,10 +43,10 @@ const sequelizeConnection = new Sequelize(
 
 // Testing the connection
 try {
-  sequelizeConnection.authenticate();
+  sequelize.authenticate();
   console.log('Connection has been established successfully.'); // eslint-disable-line no-console
 } catch (error) {
   console.error('Unable to connect to the database:', error); // eslint-disable-line no-console
 }
-
-export default sequelizeConnection;
+export { Sequelize, sequelize };
+export default sequelize;

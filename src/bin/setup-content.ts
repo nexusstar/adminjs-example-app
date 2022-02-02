@@ -48,7 +48,11 @@ const places = Object.keys(
 
 const run = async () => {
   if (process.env?.MONGO_URL !== undefined) {
-    await mongoose.connect(process.env.MONGO_URL);
+    try {
+      await mongoose.connect(process.env.MONGO_URL);
+    } catch (error) {
+      console.log(error); // eslint-disable-line no-console
+    }
   }
   try {
     await Category.deleteMany({});
